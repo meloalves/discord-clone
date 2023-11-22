@@ -1,4 +1,4 @@
-import { currentUser, redirectToSignIn } from "@clerk/nextjs/server";
+import { currentUser, redirectToSignIn } from "@clerk/nextjs";
 
 import { db } from "@/lib/db";
 
@@ -15,7 +15,9 @@ export const initialProfile = async () => {
     },
   });
 
-  if (profile) return profile;
+  if (profile) {
+    return profile;
+  }
 
   const newProfile = await db.profile.create({
     data: {

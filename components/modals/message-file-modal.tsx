@@ -42,7 +42,7 @@ export const MessageFileModal = () => {
 
   const handleClose = () => {
     form.reset();
-    handleClose();
+    onClose();
   };
 
   const isLoading = form.formState.isSubmitting;
